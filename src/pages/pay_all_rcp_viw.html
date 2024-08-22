@@ -1,0 +1,167 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> (주)아레오 영수증 출력 </title>
+</head>
+
+<script type="text/javascript">
+
+    function click() {
+        if((event.ctrlKey) && (event.keyCode == 67)) {
+            alert('복사기능은 이용하실 수 없습니다');
+        }
+    }
+
+    document.onkeydown=click;
+
+    function setComma(str)	{  //숫자 3자리 마다 콤마찍는함수
+        str = ""+str+""
+        var retValue = "";
+        var org = str;
+        for(i=0; i <str.length; i++) {
+            if(i >0 && (i%3)==0) {
+                retValue = str.charAt(str.length - i -1) + "," + retValue;
+            } else {
+                retValue = str.charAt(str.length - i -1) + retValue;
+            }
+        }
+        return retValue;
+    }
+
+    var sum = 0;
+</script>
+
+<body topmargin="0" leftmargin="0" onLoad="self.print();" oncontextmenu="return false;" onselectstart="return false" ondragstart="return false">
+<center>
+    <table width="390" border="1" cellpadding="0" cellspacing="0" bordercolor="f56d65">
+        <colgroup>
+            <col width="22">
+            <col width="75">
+            <col width="149">
+            <col width="42">
+            <col width="93">
+        </colgroup>
+        <tr>
+            <td height="35" colspan="5" align="center" style="color: red; font-weight: bold">영&nbsp수&nbsp증&nbsp(공급받는자용)</td>
+        </tr>
+        <tr bgcolor="#FFFFFF">
+            <td colspan="5" align="right" height="35"><strong>$!{mbrMVO.usrNm}($!{mbrMVO.phnId})</strong> 귀하&nbsp;&nbsp;&nbsp;</td>
+        </tr>
+        <tr bgcolor="#FFFFFF">
+            <td align="center" rowspan="4" height="30"><b>공<br>
+                급<br>
+                자</b></td>
+            <td height="35" align="center" bgcolor="#FFFAE1">사 업 자<br>
+                등록번호</td>
+            <td height="35" colspan="3" align="center" bgcolor="#FFFAE1" class="btext">110 - 81 - 42553 </td>
+        </tr>
+        <tr bgcolor="#FFFFFF">
+            <td height="35" align="center">&nbsp;상호</td>
+            <td class="btext">&nbsp;(주)아레오</td>
+            <td align="center">대표</td>
+            <td height="53" align="center" valign="middle"><img src="$!{IMG_ROOT}/usr/img/mya/mya_002.gif"></td>
+        </tr>
+        <tr>
+            <td  height="35" align="center" bgcolor="#FFFAE1">사업장<br>
+                소재지</td>
+            <td colspan="3" align="center" bgcolor="#FFFAE1">&nbsp;서울시 강남구 봉은사로 18길 84 4층 </td>
+        </tr>
+        <tr bgcolor="#FFFFFF">
+            <td  height="35" align="center">&nbsp;업태</td>
+            <td align="center">&nbsp;서비스외</td>
+            <td align="center">종목</td>
+            <td align="center">정보제공외</td>
+        </tr>
+        <tr align="center">
+            <td bgcolor="#FFFAE1" height="25" colspan="2">작성년월일</td>
+            <td bgcolor="#FFFAE1" height="25" colspan="2">공급대가총액</td>
+            <td bgcolor="#FFFAE1" height="25">비고</td>
+        </tr>
+        <tr align="center">
+            <td id='js-date' height="25" colspan="2"></td>
+            <td id='js-sum1' height="25" colspan="2"></td>
+            <td height="25">&nbsp;</td>
+        </tr>
+        <tr bgcolor="#FFFAE1" align="center">
+            <td colspan="5" height="25">위 금액을 영수 함.</td>
+        </tr>
+    </table>
+    <table width="390" border="1" cellpadding="0" cellspacing="0" bordercolor="D45C51">
+        <colgroup>
+            <col width="75">
+            <col width="181">
+            <col width="90">
+        </colgroup>
+        <tr bgcolor="#FFFAE1" align="center">
+            <td height="25"> 월일</td>
+            <td height="25">품목</td>
+            <td height="25">공급대가(금액)</td>
+        </tr>
+        #foreach ($row in $mbrUsrPayListVO)
+        <tr bgcolor="#FFFFFF" align="center">
+            <td height="25">$!{row.wrtDttmH1}&nbsp;</td>
+            <td class='js-payGb' height="25">$!{row.payGb}</td>
+            <td height="25" align="right">$!{row.payAmtH}&nbsp;&nbsp;&nbsp</td>
+        </tr>
+        <script>
+            var currentValue = Number("$row.payAmtH".replace(",", ""));
+            sum += currentValue;
+        </script>
+        #end
+        <tr bgcolor="#FFFFFF" align="center">
+            <td height="25" colspan="2">합계</td>
+            <td id='js-sum2' height="25" align="right"></td>
+        </tr>
+        <tr bgcolor="#FFFAE1" align="center">
+            <td colspan="4" height="25">부가가치세법규칙 제25조의 규정에 의한(영수증)으로 개정</td>
+        </tr>
+    </table>
+</center>
+<script>
+
+    function init() {
+
+        sum = setComma(sum);
+        document.getElementById("js-sum1").innerText = sum;
+        document.getElementById("js-sum2").innerText = sum;
+        const tdDate = document.getElementById("js-date");
+
+        const date = new Date();
+        const year = date.getFullYear();
+        const month = date.getMonth() + 1;
+        const day = date.getDate();
+
+        tdDate.innerText = year+"."+month+"."+day;
+
+        const payGbTdList = document.getElementsByClassName("js-payGb");
+        Array.prototype.forEach.call(payGbTdList, function(td) {
+
+            let payGb = td.innerText;
+
+            if(payGb == "13") {
+                td.innerText = "신용카드 결제";
+            } else if (payGb == "11") {
+                td.innerText = "계좌 이체";
+            } else if (payGb == "18") {
+                td.innerText = "무통장 입금(수동처리)";
+            } else if (payGb == "12") {
+                td.innerText = "휴대폰 결제";
+            } else if (payGb == "35") {
+                td.innerText = "가상계좌(자동처리)";
+            } else if (payGb == "32") {
+                td.innerText = "일반전화 ARS 결제";
+            } else {
+                td.innerText = "미확인";
+            }
+
+        });
+
+    }
+
+    init();
+
+
+</script>
+</body>
+</html> -->

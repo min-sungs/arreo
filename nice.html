@@ -1,0 +1,38 @@
+<!--  나이스 인증 예시 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="js-form" action="https://nice.checkplus.co.kr/CheckPlusSafeModel/checkplus.cb" method="post">
+        <input type="hidden" name="m" value="checkplusSerivce">
+		<input id="js-encodeData" type="hidden" name="EncodeData">
+        <input id="js-param" type="hidden" name="param_r1">
+    </form>
+    <script>
+        function getUrlParams() {
+            const params = {};
+            window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(str, key, value) { params[key] = value; });
+            return params;
+        }
+
+        function main() {
+            const params = getUrlParams();
+            const encodeData = params.encodeData;
+            const form = document.getElementById('js-form');
+            const dataInput = document.getElementById('js-encodeData');
+            const paramInput = document.getElementById('js-param');
+            dataInput.value = encodeData;
+            paramInput.value = encodeData;
+            form.submit();
+        }
+
+        main();
+    </script>
+</body>
+</html>

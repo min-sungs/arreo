@@ -1,0 +1,138 @@
+
+a:link    { text-decoration: none; color:#3333CC;}
+a:visited { text-decoration: none; color:#3333CC;}
+a:hover   { text-decoration: underline; color:#3333CC;}
+
+.copy:link    { text-decoration: none; color:#FFFFFF;}
+.copy:visited { text-decoration: none; color:#FFFFFF;}
+.copy:hover   { text-decoration: none; color:#cccccc;}
+ 
+.copy2:link    { text-decoration: none; color:#FFFFFF;}
+.copy2:visited { text-decoration: none; color:#FFFFFF;}
+.copy2:hover   { text-decoration: none; color:#cccccc;}
+
+.btext {font-size:13px; font-weight:bold}
+ 
+TD
+	{
+		font-family:"굴림";
+		font-size:9pt;
+		line-Height:140%; 
+		color: #222222
+	}
+
+.text01 {  
+			font-family: "돋움"; 
+			line-Height:120%; 
+			font-size: 11px
+			}
+.navigation
+         {font:9pt "굴림"; color:#99ff99;height:50}
+
+.white
+	{
+		font-family:"굴림";
+		font-size:9pt;
+		line-Height:120%; 
+		color: #ffffff
+	}
+        
+        .a:white:link	    {color: #ffffff; text-decoration: none} 
+        .a:white:active 	    {color: #ffffff; text-decoration: none} 
+        .a:white:visited     {color: #ffffff; text-decoration: none} 
+        .a:white:hover 	    {color: #ffffff; text-decoration: underline}
+
+
+.loginfo {  
+			font-family: "돋음"; color:#5F5F5F;
+			font-size: 9pt;
+			}
+			
+		a.loginfo:link	    {color: #5F5F5F; text-decoration: none} 
+        a.loginfo:active 	    {color: #5F5F5F; text-decoration: none} 
+        a.loginfo:visited     {color: #5F5F5F; text-decoration: none} 
+        a.loginfo:hover 	    {color: #5F5F5F; text-decoration: underline}
+
+				
+.name {  
+			font-family: "돋음"; color:#166188;
+			font-weight: bold;
+			font-size: 9pt;
+			}
+			
+		a.name:link	    {color: #166188; text-decoration: none} 
+        a.name:active 	    {color: #166188; text-decoration: none} 
+        a.name:visited     {color: #166188; text-decoration: none} 
+        a.name:hover 	    {color: #166188; text-decoration: underline}
+		
+.eng
+	{
+		font-family:"vardana";
+		font-size:8pt;
+		line-Height:140%; 
+		color: #3D3D3D
+	}
+
+.navy
+	{
+		font-family:"굴림";
+		font-size:9pt;
+		line-Height:120%; 
+		color: #33487C
+	}
+	
+	
+	
+.data {  
+			font-family: "돋음"; color:#2D7FAA;
+			font-weight: bold;
+			font-size: 8pt;
+			}
+			
+		a.data:link	    {color: #2D7FAA; text-decoration: none} 
+        a.data:active 	    {color: #2D7FAA; text-decoration: none} 
+        a.data:visited     {color: #2D7FAA; text-decoration: none} 
+        a.data:hover 	    {color: #2D7FAA; text-decoration: underline}
+
+
+
+P.breakhere 	{page-break-before: always}
+
+form { font-family:돋움,Verdana; font-size:9pt;}
+input { font-family:돋움,Verdana; font-size:9pt; color:#242424;}
+select { font-family:돋움,Verdana; font-size:9pt; color:#242424;}
+option { font-family:돋움,Verdana; font-size:9pt; color:#242424;}
+div { font-family:돋움,Verdana; font-size:9pt;}
+textarea { font-family:돋움,Verdana; font-size:9pt;color:#242424;}
+ul { font-family:돋움,Verdana; font-size:9pt;}
+
+	
+#title            {width:805px; height:15px; margin-bottom:0px; margin-top:7px; background-image: url(/usr/img2/com/icon_03.gif); background-repeat:no-repeat; left:0; top:0px; text-align:left;}
+.titlepd          {float:left; position:relative; left:20px; top:2px; color:#000; font-weight:bold;}
+#titleLine        {width:805px; height:3px; margin-top:6px; margin-bottom:10px; background-image: url(/usr/img2/com/title_bg01.gif); background-repeat: repeat-x; left:0; top:0px; text-align:left; }
+
+/*포인트박스*/
+#pointBox2        { background:url(/usr/img4/arreo/msg/ico_notice.gif) no-repeat 15px 15px; border:4px solid #d8e1ea; margin-top:15px; padding:10px 10px 10px 55px;}
+#pointBox2  li    {background: url(/usr/img3/msg/icon_dot01.gif) no-repeat; text-align:left; line-height:18px; padding-left:6px; color:#333;}
+
+
+
+
+/*개인정보수집,이용 : 20151029*/
+.com_protect{padding:10px;color:#333;}
+.com_protect h3{font-size:14px;margin:0;}
+.com_protect h4{font-size:13px;margin:30px 0 15px;}
+.com_protect h5{font-size:13px;margin:10px 0 15px;}
+.com_protect p{line-height:18px;}
+.com_protect a{color:#333}
+.com_protect a:hover{color:#2691ac}
+.com_protect ul{margin:0 0 5px 0;padding:0;}
+.com_protect ul li{margin:0 0 5px 0;padding:0;line-height:18px;list-style:none;}
+.com_protect ul > li > ul{margin:5px 0 0 16px;}
+.com_protect ul li span { position:absolute;display:inline-block; text-align:center; clear:both; width:16px;}
+.com_protect ul li >  p { text-indent:0;  padding-left:20px; }
+
+.com_protect table{width:98%;border-collapse:collapse;border-spacing:0;margin:5px 0 25px;}
+.com_protect table thead th{padding:7px 5px;border:1px solid #ccc;background:#eee;color:#666;font-size:12px;}
+.com_protect table tbody td{padding:7px 5px;border:1px solid #ccc;font-family:Gulim;}
+.com_protect table tbody td span{display:block}

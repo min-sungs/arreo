@@ -1,0 +1,143 @@
+/*!* custom class *!*/
+
+/*.tui-grid-cell.tui-grid-cell-has-input.tui-grid-cell-row-header[data-column-name='_draggable']{*/
+/*    opacity: 0;*/
+/*}*/
+
+/*!* my-row-class 를 가진 리스트 *!*/
+.my-row-class {
+    display: none !important;
+}
+
+/*!* grid-curosr-pointer  가진 리스트  *!*/
+/*.grid-cursor-pointer{*/
+/*    cursor: pointer !important;*/
+/*}*/
+
+
+/* HEADER */
+/* 테이블 Header 리스트 컬러 */
+/*.tui-grid-layer-focus-deactive .tui-grid-layer-focus-border{*/
+/*    background-color: red !important;*/
+/*}*/
+
+.tui-grid-layer-focus-border {
+    background-color: #0D42E5 !important;
+}
+
+.tui-grid-layer-editing.tui-grid-cell-content.tui-grid-cell-content-editor {
+    height: auto !important;
+    border: 1px solid #0D42E5;
+}
+
+.tui-grid-cell {
+		font-family: 'Pretendard', 'Noto Sans KR', Roboto, 'Nanum Gothic', 'Open Sans', sans-serif;
+    /* font-family: 'Noto Sans KR', 'Nanum Gothic', 'Roboto', 'Open Sans', sans-serif; */
+    font-weight: 500;
+    /* background-color: #EFEFF3 !important; */
+    box-shadow: 5px 5px 10px 0 #0000000F;
+		/* 임시 작업 */
+    background-color: #fff !important;
+}
+
+.tui-grid-header-area {
+    /* background-color: #F3F7FF !important; */
+    border-bottom: 2px solid #F3F7FF !important;
+		/* 임시 작업 */
+		background-color: #fff !important;
+}
+
+/* 좌측 border */
+.tui-grid-lside-area tbody tr th:first-child,
+.tui-grid-lside-area tbody tr td:first-child {
+    border-radius: 10px 0 0 10px;
+}
+
+/* 우측 border */
+.tui-grid-rside-area tbody tr th:last-child,
+.tui-grid-rside-area tbody tr td:last-child {
+    border-radius: 0 10px 10px 0;
+}
+
+/* BODY */
+.tui-grid-lside-area .tui-grid-table tbody tr:first-child > td {
+    border-top: 2px solid #F3F7FF !important;
+}
+
+.tui-grid-lside-area .tui-grid-table tbody tr > td {
+    border-bottom: 2px solid #F3F7FF !important;
+}
+
+.tui-grid-rside-area .tui-grid-table tbody tr > td {
+    border-bottom: 2px solid #F3F7FF !important;
+    border-right: 1px solid #F3F7FF !important;
+}
+
+/* 테이블 리스트 백그라운드 컬러 */
+.tui-grid-table tbody tr > td {
+    /* background-color: #F3F3F4 !important; */
+    box-shadow: 5px 5px 10px 0 #00000008;
+		/* 임시 작업 */
+		background-color: #fff !important;
+}
+
+/* 테이블 백그라운드 컬러 */
+.tui-grid-body-area {
+    background-color: #F3F7FF !important;
+}
+
+/* scroll style */
+.tui-grid-container ::-webkit-scrollbar-thumb {
+    /* background-color: #0D42E5 !important; */
+    background-color: #98999A !important;
+    border-radius: 10px;
+}
+
+.tui-grid-layer-state {
+    z-index: 0;
+    /* background-color: #F3F7FF !important; */
+		/* 임시 작업 */
+		background-color: #fff !important;
+}
+
+.tui-grid-layer-state-content > p {
+    font-size: 2.4rem;
+    font-weight: 700;
+}
+
+.tui-grid-context-menu {
+    display: none;
+}
+
+
+/* 인풋 색깔변경 */
+.tui-grid-lside-area .tui-grid-table input {
+    accent-color: #0D42E5;
+}
+
+/* 체크 리스트 컬러 */
+.tui-grid-cell.tui-grid-cell-has-input.tui-grid-cell-editable.active {
+    /*background-color: #F3F7FF !important;*/
+}
+
+.tui-grid-container.active .tui-grid-row-even.tui-grid-cell-current-row,
+.tui-grid-container.active .tui-grid-row-odd.tui-grid-cell-current-row{
+    > td {
+        background-color: #F3F7FF !important;
+    }
+}
+
+.tui-grid-container .tui-grid-row-even.tui-grid-cell-current-row.active,
+.tui-grid-container .tui-grid-row-odd.tui-grid-cell-current-row.active{
+    > td {
+        background-color: #F3F3F4 !important;
+    }
+}
+
+
+
+/*F3F3F4*/
+
+.tui-grid-border-line.tui-grid-border-line-top {
+    border: none;
+}
